@@ -13,7 +13,7 @@ class home_screen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Selamat Datang di Kuis!',
+              'Selamat Datang di Quizmu!',
               style: TextStyle(fontSize: 24),
               textAlign: TextAlign.center,
             ),

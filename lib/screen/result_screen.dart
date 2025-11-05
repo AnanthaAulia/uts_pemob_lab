@@ -10,7 +10,10 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Hasil Kuis")),
+      backgroundColor: const Color(0xFFCD8B62),
+      appBar: AppBar(title: const Text("Hasil Kuis"),
+      backgroundColor: const Color(0xFFCD8B62),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
