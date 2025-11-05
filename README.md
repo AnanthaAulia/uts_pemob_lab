@@ -1,16 +1,8 @@
-# uts_pemob_lab
+NAMA : Anantha Aulia Rahman Nasution
+NIM  : 231401072
+LAB  : 6
 
-A new Flutter project.
+Nama Aplikasi: Quizmu
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Deskripsi aplikasi:
+Quizmu adalah aplikasi kuis pilihan ganda yang dirancang untuk membantu pengguna menguji dan meningkatkan pengetahuan umum mereka. Aplikasi ini terdiri dari beberapa soal yang harus dijawab satu per satu. Setiap soal memiliki empat pilihan jawaban, dan pengguna memilih jawaban yang dianggap benar. Skor akhir akan ditampilkan setelah semua soal terjawab.
