@@ -58,47 +58,59 @@ class quiz_screenState extends State<quiz_screen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => ResultScreen(score: score, total: questions.length),
+          builder: (context) =>
+              ResultScreen(score: score, total: questions.length),
         ),
       );
     }
-  }
-
-  Future<bool> handleBack() async {
-    if (currentQuestion > 0) {
-      setState(() {
-        currentQuestion--;
-      });
-      return false;
-    }
-    return true;
   }
 
   @override
   Widget build(BuildContext context) {
     var q = questions[currentQuestion];
 
-    return WillPopScope(   // <--- Mendeteksi tombol back / ikon back
-      onWillPop: handleBack,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (currentQuestion > 0) {
+          setState(() {
+            currentQuestion--;
+          });
+        } else {
+          Navigator.pop(context);
+        }
+      },
       child: Scaffold(
         appBar: AppBar(
           title: Text("Soal ${currentQuestion + 1} / ${questions.length}"),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
-            onPressed: handleBack,
+            onPressed: () {
+              if (currentQuestion > 0) {
+                setState(() {
+                  currentQuestion--;
+                });
+              } else {
+                Navigator.pop(context);
+              }
+            },
           ),
-          backgroundColor: Color(0xFFCD8B62),
+          backgroundColor: const Color(0xFFCD8B62),
         ),
+
         backgroundColor: const Color(0xFFCD8B62),
-        body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: question_widget(
-            question: q["question"],
-            answers: List<String>.from(q["answers"]),
-            onAnswerSelected: answerQuestion,
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: question_widget(
+              question: q["question"],
+              answers: List<String>.from(q["answers"]),
+              onAnswerSelected: answerQuestion,
+            ),
           ),
         ),
       ),
     );
+
   }
 }

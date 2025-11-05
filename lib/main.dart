@@ -14,6 +14,14 @@ class MyApp extends StatelessWidget {
       title: 'Quiz',
       debugShowCheckedModeBanner: false,
       home: const home_screen(),
+      theme: ThemeData(
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFFEED7A1),
+            foregroundColor: Colors.black,
+          ),
+        ),
+      ),
     );
   }
 }

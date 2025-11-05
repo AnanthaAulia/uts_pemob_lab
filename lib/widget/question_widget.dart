@@ -15,20 +15,39 @@ class question_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.center, // ⬅ Tengah vertikal
+      crossAxisAlignment: CrossAxisAlignment.center, // ⬅ Tengah horizontal
       children: [
         Text(
           question,
-          style: const TextStyle(fontSize: 22),
+          textAlign: TextAlign.center, // ⬅ agar teksnya juga tengah
+          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 20),
 
-        // Generate pilihan jawaban
-        for (int i = 0; i < answers.length; i++)
-          ElevatedButton(
-            onPressed: () => onAnswerSelected(i),
-            child: Text(answers[i]),
+        const SizedBox(height: 24),
+
+        for (int i = 0; i < answers.length; i++) ...[
+          SizedBox(
+            width: 140,
+            height: 70,
+            child:
+            ElevatedButton(
+              onPressed: () => onAnswerSelected(i),
+              style: ElevatedButton.styleFrom(
+                alignment: Alignment.center, // <- memastikan teks center
+              ),
+              child: Text(
+                answers[i],
+                textAlign: TextAlign.center, // <- tambahan agar teks center
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
           ),
+          const SizedBox(height: 16), // Jarak antar tombol
+        ]
       ],
     );
   }

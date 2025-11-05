@@ -14,18 +14,24 @@ class home_screen extends StatelessWidget {
           children: [
             const Text(
               'Selamat Datang di Quizmu!',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 28),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const quiz_screen()),
-                );
-              },
-              child: const Text('Mulai'),
+            SizedBox(
+              width: 150,
+              height: 60,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const quiz_screen()),
+                  );
+                },
+                child: const Text('Mulai',
+                  style: TextStyle(fontSize: 28),
+                ),
+              ),
             ),
           ],
         ),
