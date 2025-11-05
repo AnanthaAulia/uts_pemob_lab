@@ -11,12 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Quiz Sederhana',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const home_screen(), // Halaman pertama
+      title: 'Quiz',
       debugShowCheckedModeBanner: false,
+      home: const home_screen(),
     );
   }
 }
