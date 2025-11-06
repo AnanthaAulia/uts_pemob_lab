@@ -3,7 +3,8 @@ import 'result_screen.dart';
 import 'package:uts_pemob_lab/widget/question_widget.dart';
 
 class quiz_screen extends StatefulWidget {
-  const quiz_screen({super.key});
+  final String username;
+  const quiz_screen({super.key, required this.username});
 
   @override
   State<quiz_screen> createState() => quiz_screenState();
@@ -59,7 +60,11 @@ class quiz_screenState extends State<quiz_screen> {
         context,
         MaterialPageRoute(
           builder: (context) =>
-              ResultScreen(score: score, total: questions.length),
+              ResultScreen(
+                score: score,
+                total: questions.length,
+                username: widget.username,
+              ),
         ),
       );
     }

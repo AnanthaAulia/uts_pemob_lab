@@ -4,8 +4,14 @@ import 'home_screen.dart';
 class ResultScreen extends StatelessWidget {
   final int score;
   final int total;
+  final String username;
 
-  const ResultScreen({super.key, required this.score, required this.total});
+  const ResultScreen({
+    super.key,
+    required this.score,
+    required this.total,
+    required this.username,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +24,11 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              "Selamat $username!",
+              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
             Text(
               "Nilai Kamu: $score / $total",
               style: const TextStyle(fontSize: 28),
